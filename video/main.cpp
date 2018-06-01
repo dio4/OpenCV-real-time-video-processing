@@ -1,11 +1,10 @@
-// Video Processing
-// opencv header files
+//заголовочный файл программы обработки видео
 #include <stdio.h>
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/core/core.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
-// namespaces declaration
+// namespaces объявления
 using namespace cv;
 using namespace std;
 
@@ -14,8 +13,8 @@ Mat gray;
 
 void help()
 {
-	printf("Video Capture Device Test:\n");
-	printf("Press q: to quite the program\n");
+	printf("Тест захвата видеоустройства:\n");
+	printf("Нажать q: выход из программы\n");
 }
 
 int main( int argc, char** argv )
@@ -24,11 +23,11 @@ int main( int argc, char** argv )
     // check for failure
 	VideoCapture capture(0);
 	if (!capture.isOpened()) {
-		printf("Failed to open a video device or video file!\n");
+		printf("Не могу открыть устройство или видеофайл!\n");
 		return 1;
 	}
 
-    // Set Capture device properties.
+    // установить свойства для устройства видеозахвата
 	capture.set(CV_CAP_PROP_FRAME_WIDTH, 320);
 	capture.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
 
